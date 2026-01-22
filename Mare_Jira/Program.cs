@@ -1,6 +1,7 @@
 ﻿using Discord;
 using Discord.WebSocket;
 using MareJira.Commands;
+using MareJira.Objects;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -17,8 +18,8 @@ public class Program {
 
     public async Task RunAsync() {
         
-        var token = File.ReadAllText("D:\\Users\\mcand\\RiderProjects\\MareJira\\MareJira\\Secrets\\token.txt");
-        _guildId = ulong.Parse(File.ReadAllText("D:\\Users\\mcand\\RiderProjects\\MareJira\\MareJira\\Secrets\\devguildid.txt"));
+        var token = File.ReadAllText("D:\\Users\\modularmania\\RiderProjects\\MareJira\\Mare_Jira\\Secrets\\token.txt");
+        _guildId = ulong.Parse(File.ReadAllText("D:\\Users\\modularmania\\RiderProjects\\MareJira\\Mare_Jira\\Secrets\\devguildid.txt"));
         
         _serviceProvider = CreateProvider();
         _client = _serviceProvider.GetRequiredService<DiscordSocketClient>();
@@ -42,15 +43,17 @@ public class Program {
     }
     
     static IServiceProvider CreateProvider() {
-        var config = new DiscordSocketConfig();
         
+        var config = new DiscordSocketConfig();
         return new ServiceCollection()
             .AddSingleton(config)
             .AddSingleton<DiscordSocketClient>()
             .AddSingleton<CommandHandler>()
             .AddSingleton<AssigneeTasks>()
-            .AddDbContext<ApplicationDbContext>(
-                options => options.UseMySQL())
+            .AddSingleton<AssignedTasks>()
+            .AddSingleton<ViewTasks>()
+            .AddDbContext<TaskContext>(
+                options => options.UseMySQL("server=localhost;database=library;user=user;password=password"))
             .BuildServiceProvider();
     }
 }

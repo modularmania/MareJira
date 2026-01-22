@@ -8,21 +8,27 @@ namespace MareJira;
 public class CommandHandler {
     
     private readonly DiscordSocketClient _client;
+    private readonly IServiceProvider _serviceProvider;
     private AssigneeTasks _assigneeTasks;
     private AssignedTasks _assignedTasks;
     private ViewTasks _viewTasks;
 
     public CommandHandler(DiscordSocketClient client, 
-                          AssigneeTasks assigneeTasks) {
+                          IServiceProvider serviceProvider,
+                          AssigneeTasks assigneeTasks,
+                          AssignedTasks assignedTasks,
+                          ViewTasks viewTasks) {
         _client = client;
         _client.SlashCommandExecuted += SlashCommandHandler;
+        _serviceProvider = serviceProvider;
+        _assigneeTasks = assigneeTasks;
     }
     public async Task RegisterCommands(ulong guildId) {
         
         var guild = _client.GetGuild(guildId);
 
         var assignTask = new SlashCommandBuilder()
-            .WithName("assigntask")
+            .WithName("assigntasktest")
             .WithDescription("Assigns a task to the given user.")
             .AddOption("assigned_to", ApplicationCommandOptionType.User, "The member receiving the task", isRequired: true)
             .AddOption("task_name", ApplicationCommandOptionType.String, "The name of the task", isRequired: true)
@@ -31,7 +37,7 @@ public class CommandHandler {
                         .WithName("priority").WithDescription("The priority of the task").WithRequired(true)
                         .AddChoice("Lowest", 1).AddChoice("Low", 2).AddChoice("Medium", 3).AddChoice("High", 4).AddChoice("Highest", 5)
                         .WithType(ApplicationCommandOptionType.Integer))
-            .AddOption("deadline", ApplicationCommandOptionType.String, "The set deadline; must be in the format \"YYYY-MM-DD\"", isRequired: false);
+            .AddOption("deadline", ApplicationCommandOptionType.String, "The set deadline; must be in the format \"MM/DD/YYYY\"", isRequired: false);
         
         try {
             await guild.DeleteApplicationCommandsAsync();
@@ -42,13 +48,12 @@ public class CommandHandler {
         }
     }
     private async Task SlashCommandHandler(SocketSlashCommand command) {
-        
         switch(command.Data.Name) {
-            case "assigntask":
+            case "assigntasktest":
                 await _assigneeTasks.HandleAssignTaskCommand(command);
                 break;
             default:
-                await command.RespondAsync("Unrecognized command.");
+                await command.RespondAsync("Unrecognized command.", ephemeral: true);
                 break;
         }
     }
