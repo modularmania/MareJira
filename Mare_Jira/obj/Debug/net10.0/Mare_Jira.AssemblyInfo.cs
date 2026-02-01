@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Mare_Jira")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d72c17a2f435833f44eab1ba8caf16c54723f3bb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ab93b8fdf5a55c37d576b51007534f74f47ba739")]
 [assembly: System.Reflection.AssemblyProductAttribute("Mare_Jira")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Mare_Jira")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

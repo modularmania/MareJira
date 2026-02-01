@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Users\\mcand\\RiderProjects\\Mare_Jira\\Mare_Jira\\Mare_Jira.csproj": {}
+    "D:\\Users\\modularmania\\RiderProjects\\MareJira\\Mare_Jira\\Mare_Jira.csproj": {}
   },
   "projects": {
-    "D:\\Users\\mcand\\RiderProjects\\Mare_Jira\\Mare_Jira\\Mare_Jira.csproj": {
+    "D:\\Users\\modularmania\\RiderProjects\\MareJira\\Mare_Jira\\Mare_Jira.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Users\\mcand\\RiderProjects\\Mare_Jira\\Mare_Jira\\Mare_Jira.csproj",
+        "projectUniqueName": "D:\\Users\\modularmania\\RiderProjects\\MareJira\\Mare_Jira\\Mare_Jira.csproj",
         "projectName": "Mare_Jira",
-        "projectPath": "D:\\Users\\mcand\\RiderProjects\\Mare_Jira\\Mare_Jira\\Mare_Jira.csproj",
-        "packagesPath": "C:\\Users\\mcand\\.nuget\\packages\\",
-        "outputPath": "D:\\Users\\mcand\\RiderProjects\\Mare_Jira\\Mare_Jira\\obj\\",
+        "projectPath": "D:\\Users\\modularmania\\RiderProjects\\MareJira\\Mare_Jira\\Mare_Jira.csproj",
+        "packagesPath": "C:\\Users\\modularmania\\.nuget\\packages\\",
+        "outputPath": "D:\\Users\\modularmania\\RiderProjects\\MareJira\\Mare_Jira\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\mcand\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\modularmania\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
@@ -77,7 +77,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Users\\mcand\\.dotnet\\sdk\\10.0.102/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Users\\modularmania\\.dotnet\\sdk\\10.0.102/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",

@@ -22,6 +22,8 @@ public class CommandHandler {
         _client.SlashCommandExecuted += SlashCommandHandler;
         _serviceProvider = serviceProvider;
         _assigneeTasks = assigneeTasks;
+        _assignedTasks = assignedTasks;
+        _viewTasks = viewTasks;
     }
     public async Task RegisterCommands(ulong guildId) {
         
